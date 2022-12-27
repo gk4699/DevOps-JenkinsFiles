@@ -7,30 +7,5 @@ pipeline {
                 git 'https://github.com/ramdevops03/Development-Team-Repo.git'
             }
         }
-        stage('Maven clean') {
-            steps {
-                sh 'mvn -f pom.xml clean'
-            }
-        }
-        stage('Maven compile') {
-            steps {
-                sh 'mvn -f pom.xml compile'
-            }
-        }
-        stage('Maven package') {
-            steps {
-                sh 'mvn -f pom.xml package'
-            }
-        }
-        stage('Push Artifacts to CodeArtifactory') {
-            steps {
-                echo 'Pushed .war files'
-            }
-        }
-        stage('Deploy code to Production') {
-            steps {
-                echo 'Deploy to Prod'
-            }
-        }
     }
 }
